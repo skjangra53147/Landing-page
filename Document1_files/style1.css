@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+    
+    body{
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('image.png') no-repeat center center/cover;
+    height:100vh;
+    color:#fff;
+}
+/* Navbar */
+.navbar{
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#ff7200;
+}
+
+.menu ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.menu ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.menu ul li a:hover{
+    color:#ff7200;
+}
+
+/* Search */
+.search{
+    display:flex;
+}
+
+.search input{
+    padding:8px;
+    border:none;
+    outline:none;
+}
+
+.search button{
+    background:#ff7200;
+    border:none;
+    padding:8px 15px;
+    color:#fff;
+    cursor:pointer;
+}
+
+/* Main Content */
+.content{
+    padding:100px 80px;
+    width:60%;
+}
+
+.content h1{
+    font-size:50px;
+    line-height:1.2;
+}
+
+.content h1 span{
+    color:#ff7200;
+}
+
+.content p{
+    margin:20px 0;
+    line-height:1.6;
+    color:#ddd;
+}
+
+.btn{
+    background:#ff7200;
+    border:none;
+    padding:12px 25px;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/* Login Box */
+.login-box{
+    position:absolute;
+    top:120px;
+    right:80px;
+    width:300px;
+    background:#111;
+    padding:25px;
+    border-radius:10px;
+}
+
+.login-box h2{
+    background:#fff;
+    color:#ff7200;
+    text-align:center;
+    padding:8px;
+    border-radius:5px;
+    margin-bottom:20px;
+}
+
+.login-box input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid #ff7200;
+    color:#fff;
+    outline:none;
+}
+
+.login-box button{
+    width:100%;
+    padding:10px;
+    background:#ff7200;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+    border-radius:5px;
+    margin-top:10px;
+}
+
+.login-box p{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.login-box p span{
+    color:#ff7200;
+    cursor:pointer;
+}

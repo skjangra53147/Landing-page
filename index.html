@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<!-- saved from url=(0034)http://127.0.0.1:5501/indax1.html# -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    
-<link rel="stylesheet" href="style.css"></head>
+    <title>PraRoz - Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
 
+<!-- Drawer backdrop -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+<!-- Right-to-left Drawer -->
+<div class="drawer" id="drawer">
+    <button class="drawer-close" onclick="closeDrawer()" aria-label="Close menu">&#10005;</button>
+    <ul>
+        <li><a href="#" onclick="closeDrawer()">HOME</a></li>
+        <li><a href="#" onclick="closeDrawer()">ABOUT</a></li>
+        <li><a href="#" onclick="closeDrawer()">SERVICE</a></li>
+        <li><a href="#" onclick="closeDrawer()">DESIGN</a></li>
+        <li><a href="#" onclick="closeDrawer()">CONTACT</a></li>
+    </ul>
+    <div class="drawer-search">
+        <input type="text" placeholder="Type to Search">
+        <button>Search</button>
+    </div>
+</div>
+
+<!-- Navbar -->
 <div class="navbar">
     <div class="logo">PraRoz</div>
 
     <div class="menu">
         <ul>
-            <li><a href="http://127.0.0.1:5501/indax1.html#">HOME</a></li>
-            <li><a href="http://127.0.0.1:5501/indax1.html#">ABOUT</a></li>
-            <li><a href="http://127.0.0.1:5501/indax1.html#">SERVICE</a></li>
-            <li><a href="http://127.0.0.1:5501/indax1.html#">DESIGN</a></li>
-            <li><a href="http://127.0.0.1:5501/indax1.html#">CONTACT</a></li>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">DESIGN</a></li>
+            <li><a href="#">CONTACT</a></li>
         </ul>
     </div>
 
@@ -26,64 +46,49 @@
         <input type="text" placeholder="Type to Search">
         <button>Search</button>
     </div>
+
+    <!-- Hamburger button (mobile only) -->
+    <button class="hamburger" id="hamburgerBtn" onclick="openDrawer()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </div>
 
-<div class="content">
-    <h1>Web Design &amp; <br><span>Development</span> Course</h1>
-    <p>
-        Web Design is a specialisation of the design stream. 
-        They also use HTML, CSS, WYSIWYG editing software, 
-        mark up validators etc., to create design elements.
-    </p>
-    <button class="btn">JOIN US</button>
+<!-- Page Body -->
+<div class="page-body">
+    <div class="content">
+        <h1>Web Design &amp; <br><span>Development</span> Course</h1>
+        <p>
+            Web Design is a specialisation of the design stream.
+            They also use HTML, CSS, WYSIWYG editing software,
+            mark up validators etc., to create design elements.
+        </p>
+        <button class="btn">JOIN US</button>
+    </div>
+
+    <div class="login-box">
+        <h2>Login Here</h2>
+        <input type="email" placeholder="Enter Email Here">
+        <input type="password" placeholder="Enter Password Here">
+        <button>Login</button>
+        <p>Don't have an account? <span>Sign up here</span></p>
+    </div>
 </div>
 
-<div class="login-box">
-    <h2>Login Here</h2>
-    <input type="email" placeholder="Enter Email Here">
-    <input type="password" placeholder="Enter Password Here">
-    <button>Login</button>
-    <p>Don't have an account? <span>Sign up here</span></p>
-</div>
-
-    
-<!-- Code injected by live-server -->
 <script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
+    function openDrawer() {
+        document.getElementById('drawer').classList.add('open');
+        document.getElementById('drawerOverlay').classList.add('active');
+        document.body.classList.add('no-scroll');
+    }
+
+    function closeDrawer() {
+        document.getElementById('drawer').classList.remove('open');
+        document.getElementById('drawerOverlay').classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    }
 </script>
 
-</body></html>
+</body>
+</html>
